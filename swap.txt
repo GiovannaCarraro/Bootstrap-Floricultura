@@ -38,6 +38,7 @@ Responsável por:
 
 tarefas:
 fazendo a logo e linkando no html
-
+salvando e linkando as imagens
+fazendo o css
 
 https://github.com/GiovannaCarraro/Bootstrap-Floricultura.git

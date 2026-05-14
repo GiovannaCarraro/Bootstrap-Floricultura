@@ -8,5 +8,110 @@
 
 body {
     background-color: #fff9fc;
-    font-family: ;
+    font-family: 'pangolin', 'cursive';
+    color: var(--texto);
+}
+
+/* menu */
+.menu-navegacao {
+    background: linear-gradient(90deg, var(--rosa-pastel), var(--roxo-pastel));
+}
+
+.navbar-brand {
+    color: #7a4fa3 !important;
+    font-size: 1.7rem;
+}
+
+;
+
+.nav-link {
+    color: #6b5b7a !important;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #ffffff !important;
+}
+
+/* hero */
+.seccao-destaque {
+    padding: 90px 0;
+    background: linear-gradient(135deg, #fff0f7, #f0e6ff, #e6fff0);
+}
+
+.seccao-destaque h1 {
+    color: #75508f;
+}
+
+.seccao-destaque p {
+    color: #7d728d;
+}
+
+.btn-success {
+    background-color: #caa8ff !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 30px;
+    padding: 12px 25px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn-success:hover {
+    background-color: #b68df8 !important;
+    transform: scale(1.05);
+}
+
+/* vitrine */
+.vitrine-flores {
+    padding: 70px 0;
+    background-color: #fdf7ff;
+}
+
+
+/* estilos */
+.seccao-destaque {
+    padding: 80px 0;
+    background-color: #fdfcfb;
+}
+
+.vitrine-flores {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+
+.cartao-flor {
+    transition: transform 0.3s;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.cartao-flor:hover {
+    transform: scale(1.03);
+}
+
+.cartao-flor__imagem {
+    height: 250px;
+    object-fit: cover;
+}
+
+.cartao-flor__titulo {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-top: 15px;
+}
+
+.cartao-flor__preco {
+    font-weight: bold;
+    color: #27ae60;
+    font-size: 1.2rem;
+}
+
+.rodape-principal {
+    background-color: #2d3436;
+    color: white;
+    padding: 40px 0;
 }
