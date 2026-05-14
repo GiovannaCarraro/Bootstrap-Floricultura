@@ -14,7 +14,7 @@ Bootstrap e Responsividade
 Responsável por:
 • Classes Bootstrap
 • Componentes
-• Responsividade
+• Responsividade 
 • Layout
 
 Giovanna/Gabrielli

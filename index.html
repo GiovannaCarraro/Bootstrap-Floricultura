@@ -1,236 +1,314 @@
-
 <!DOCTYPE html>
-<html lang="pt-pt">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FloraGrid | Floricultura</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FloraGrid | Floricultura</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="assets/css/style.css">
 
+<style>
+body{font-family:Arial,sans-serif}
+.hero{padding:80px 0;background:#fdfcfb}
+.cards{padding:60px 0;background:#f8f9fa}
+.card-flor{transition:.3s;border:none;border-radius:15px;overflow:hidden}
+.card-flor:hover{transform:scale(1.03)}
+.card-flor img{height:250px;object-fit:cover}
+.preco{font-weight:bold;color:#27ae60;font-size:1.2rem}
+.galeria img{height:300px;object-fit:cover;width:100%}
+footer{background:#2d3436;color:#fff;padding:40px 0}
+.bi{font-size:1.4rem;cursor:pointer}
+</style>
 </head>
 
 <body>
 
-    <header class="menu-navegacao shadow-sm sticky-top bg-white">
-        <nav class="navbar navbar-expand-lg navbar-light container">
-            <a class="navbar-brand fw-bold" ><img src="flora.png" alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="menuPrincipal">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#vitrine">Monte seu presente</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+<header class="shadow-sm sticky-top bg-white">
+<nav class="navbar navbar-expand-lg navbar-light container">
 
-    <main>
-        <section id="inicio" class="seccao-destaque">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <h1 class="display-4 fw-bold">Beleza que floresce em cada detalhe</h1>
-                        <p class="lead">Encontre os melhores arranjos para presentear ou decorar o seu espaço.</p>
-                        <a href="#vitrine" class="btn btn-success btn-lg">Explorar Flores</a>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="assets/img/buque2.png"
-                            alt="Arranjo de Flores" class="img-fluid rounded-4 shadow">
-                    </div>
-                </div>
-            </div>
-        </section>
+<a class="navbar-brand fw-bold" href="#">🌸 FloraGrid</a>
 
-        <section id="vitrine" class="vitrine-flores">
-            <div class="container conteudo-vitrine">
-                <h2 class="text-center mb-5 fw-bold">Nossa Coleção</h2>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-                <div class="row g-4 listagem-produtos">
-                    <article class="col-12 col-md-6 col-lg-4">
-                        <div class="card cartao-flor h-100 shadow-sm">
-                            <img src="assets/img/buque5.jpg"
-                                class="card-img-top cartao-flor__imagem" alt="Rosa Vermelha">
-                            <div class="card-body text-center">
-                                <h3 class="cartao-flor__titulo">Rosa Imperial</h3>
-                                <p class="text-muted">A elegância definitiva em forma de flor.</p>
-                                <p class="cartao-flor__preco">R$ 290,90</p>
-                                <button class="btn btn-outline-success w-100 fw-bold">Adicionar ao Carrinho</button>
-                            </div>
-                        </div>
-                    </article>
+<div class="collapse navbar-collapse" id="menu">
 
-                    <article class="col-12 col-md-6 col-lg-4">
-                        <div class="card cartao-flassets/img/buque7.webpor h-100 shadow-sm">
-                            <img src="assets/img/buque8.jpg"
-                                class="card-img-top cartao-flor__imagem" alt="Girassol">
-                            <div class="card-body text-center">
-                                <h3 class="cartao-flor__titulo">Girassol do Campo</h3>
-                                <p class="text-muted">Luz e alegria para qualquer ambiente.</p>
-                                <p class="cartao-flor__preco">R$ 150,00</p>
-                                <button class="btn btn-outline-success w-100 fw-bold">Adicionar ao Carrinho</button>
-                            </div>
-                        </div>
-                    </article>
+<ul class="navbar-nav ms-auto">
 
-                    <article class="col-12 col-md-6 col-lg-4">
-                        <div class="card cartao-flor h-100 shadow-sm">
-                            <img src=""
-                                class="card-img-top cartao-flor__imagem" alt="Lírios">
-                            <div class="card-body text-center">
-                                <h3 class="cartao-flor__titulo">Lírio Branco</h3>
-                                <p class="text-muted">Símbolo de pureza e sofisticação.</p>
-                                <p class="cartao-flor__preco">R$ 320,50</p>
-                                <button class="btn btn-outline-success w-100 fw-bold">Adicionar ao Carrinho</button>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
+<li class="nav-item">
+<a class="nav-link" href="#inicio">Início</a>
+</li>
 
-    <footer id="contato" class="rodape-principal">
-        <div class="container text-center">
-            <h4 class="fw-bold">Floricultura FloraGrid</h4>
-            <p>Cultivando sorrisos desde 2026.</p>
-            <p>(16) 19674-7766.</p>
-            <div class="py-3">
-                <i class="bi bi-instagram px-2"></i>
-                <i class="bi bi-facebook px-2"></i>
-                <i class="bi bi-whatsapp px-2"></i>
-            </div>
-            <hr class="opacity-25 text-white">
-            <p class="small mb-0">© Todos os direitos reservados.</p>
-        </div>
-    </footer>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+Produtos
+</a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+<ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#vitrine">Buquês</a></li>
+    <li><a class="dropdown-item" href="#galeria">Galeria</a></li>
+    <li><a class="dropdown-item" href="#formulario">Contato</a></li>
+    </ul>
+    </li>
 
-        const botoesCarrinho = document.querySelectorAll('.btn-outline-success');
+    <li class="nav-item">
+    <a class="nav-link" href="#contato">Rodapé</a>
+    </li>
+</ul>
 
-    
-        let quantidadeCarrinho = 0;
+</div>
+</nav>
+</header>
 
-        
-        const menu = document.querySelector('.navbar-nav');
+<main>
 
-        const itemCarrinho = document.createElement('li');
+<section id="inicio" class="hero">
+<div class="container">
+<div class="row align-items-center">
 
-        itemCarrinho.classList.add('nav-item');
+<div class="col-md-6">
+<h1 class="display-4 fw-bold">Beleza que floresce em cada detalhe</h1>
+<p class="lead">Encontre os melhores arranjos para presentear.</p>
+<a href="#vitrine" class="btn btn-success btn-lg">Explorar Flores</a>
+</div>
 
-        itemCarrinho.innerHTML = `
-        <a class="nav-link fw-bold" href="#">
-            🛒 Carrinho (<span id="contador-carrinho">0</span>)
-        </a>
-    `;
+<div class="col-md-6">
+<img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded-4 shadow">
+</div>
 
-        menu.appendChild(itemCarrinho);
+</div>
+</div>
+</section>
 
-    
-        botoesCarrinho.forEach(botao => {
+<section id="vitrine" class="cards">
+<div class="container">
 
-            botao.addEventListener('click', function () {
+<h2 class="text-center fw-bold mb-5">Nossa Coleção</h2>
 
-                // Seleciona o card do produto
-                const cartao = this.closest('.cartao-flor');
+<div class="row g-4">
 
-                // Nome do produto
-                const nomeFlor = cartao.querySelector('.cartao-flor__titulo').textContent;
+<div class="col-md-4">
+<div class="card card-flor shadow-sm h-100">
 
-                // Preço do produto
-                const precoFlor = cartao.querySelector('.cartao-flor__preco').textContent;
+<img src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?auto=format&fit=crop&w=400&q=80">
 
-                // Atualiza carrinho
-                quantidadeCarrinho++;
+<div class="card-body text-center">
+<h3>Rosa Imperial</h3>
+<p class="text-muted">Elegância definitiva.</p>
+<p class="preco">R$ 290,90</p>
+<button class="btn btn-outline-success w-100">Adicionar ao Carrinho</button>
+</div>
 
-                document.getElementById('contador-carrinho').textContent = quantidadeCarrinho;
+</div>
+</div>
 
-                // Alerta SweetAlert2
-                Swal.fire({
-                    title: 'Flor adicionada 🌸',
-                    html: `
-                    <strong>${nomeFlor}</strong><br>
-                    Preço: ${precoFlor}
-                `,
-                    icon: 'success',
-                    confirmButtonColor: '#27ae60',
-                    confirmButtonText: 'Continuar comprando'
-                });
+<div class="col-md-4">
+<div class="card card-flor shadow-sm h-100">
 
-            });
+<img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=400&q=80">
 
-        });
+<div class="card-body text-center">
+<h3>Girassol do Campo</h3>
+<p class="text-muted">Luz e alegria.</p>
+<p class="preco">R$ 150,00</p>
+<button class="btn btn-outline-success w-100">Adicionar ao Carrinho</button>
+</div>
 
-       
-        const linksMenu = document.querySelectorAll('.nav-link');
+</div>
+</div>
 
-        linksMenu.forEach(link => {
+<div class="col-md-4">
+<div class="card card-flor shadow-sm h-100">
 
-            link.addEventListener('click', function (evento) {
+<img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=400&q=80">
 
-                const destino = this.getAttribute('href');
+<div class="card-body text-center">
+<h3>Lírio Branco</h3>
+<p class="text-muted">Pureza e sofisticação.</p>
+<p class="preco">R$ 320,50</p>
+<button class="btn btn-outline-success w-100">Adicionar ao Carrinho</button>
+</div>
 
-                if (destino.startsWith('#')) {
+</div>
+</div>
 
-                    evento.preventDefault();
+</div>
+</div>
+</section>
 
-                    const secao = document.querySelector(destino);
+<section id="galeria" class="py-5 bg-light galeria">
+<div class="container">
 
-                    secao.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+<h2 class="text-center fw-bold mb-5">Galeria</h2>
 
-                }
+<div class="row g-4">
 
-            });
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80" class="rounded shadow">
+</div>
 
-        });
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?auto=format&fit=crop&w=600&q=80" class="rounded shadow">
+</div>
 
-        
-        const iconesSociais = document.querySelectorAll('.bi');
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=600&q=80" class="rounded shadow">
+</div>
 
-        iconesSociais.forEach(icone => {
+</div>
+</div>
+</section>
 
-            icone.addEventListener('mouseenter', () => {
+<section id="formulario" class="py-5">
+<div class="container">
 
-                icone.style.color = '#27ae60';
-                icone.style.transition = '0.3s';
+<h2 class="text-center fw-bold mb-5">Entre em Contato</h2>
 
-            });
+<div class="row justify-content-center">
+<div class="col-md-8">
 
-            icone.addEventListener('mouseleave', () => {
+<form id="formContato">
 
-                icone.style.color = 'white';
+<div class="mb-3">
+<label class="form-label">Nome</label>
+<input type="text" class="form-control" required>
+</div>
 
-            });
+<div class="mb-3">
+<label class="form-label">E-mail</label>
+<input type="email" class="form-control" required>
+</div>
 
-        });
+<div class="mb-3">
+<label class="form-label">Mensagem</label>
+<textarea class="form-control" rows="5" required></textarea>
+</div>
 
-        // Mensagem ao abrir o site
-        
-        window.addEventListener('load', () => {
+<button type="submit" class="btn btn-success w-100">
+Enviar Mensagem
+</button>
 
-            Swal.fire({
-                title: 'Bem-vindo à FloraGrid 🌷',
-                text: 'Descubra flores incríveis para qualquer ocasião.',
-                icon: 'info',
-                timer: 2500,
-                showConfirmButton: false
-            });
+</form>
 
-        });
+</div>
+</div>
+</div>
+</section>
 
-    </script>
+</main>
+
+<footer id="contato">
+<div class="container text-center">
+
+<h4 class="fw-bold">Floricultura FloraGrid</h4>
+<p>Cultivando sorrisos desde 2026.</p>
+
+<div class="py-3">
+<i class="bi bi-instagram px-2"></i>
+<i class="bi bi-facebook px-2"></i>
+<i class="bi bi-whatsapp px-2"></i>
+</div>
+
+<hr>
+
+<p class="small mb-0">© Todos os direitos reservados.</p>
+
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+const botoes=document.querySelectorAll('.btn-outline-success')
+let carrinho=0
+
+const menu=document.querySelector('.navbar-nav')
+const item=document.createElement('li')
+
+item.classList.add('nav-item')
+
+item.innerHTML=`
+<a class="nav-link fw-bold" href="#">
+🛒 Carrinho (<span id="contador">0</span>)
+</a>
+`
+
+menu.appendChild(item)
+
+botoes.forEach(botao=>{
+
+botao.addEventListener('click',function(){
+
+const card=this.closest('.card')
+
+const nome=card.querySelector('h3').textContent
+const preco=card.querySelector('.preco').textContent
+
+carrinho++
+
+document.getElementById('contador').textContent=carrinho
+
+Swal.fire({
+title:'Produto adicionado 🌸',
+html:`<strong>${nome}</strong><br>${preco}`,
+icon:'success',
+confirmButtonColor:'#27ae60'
+})
+
+})
+
+})
+
+const form=document.getElementById('formContato')
+
+form.addEventListener('submit',function(e){
+
+e.preventDefault()
+
+Swal.fire({
+title:'Mensagem enviada 🌷',
+text:'Entraremos em contato em breve.',
+icon:'success',
+confirmButtonColor:'#27ae60'
+})
+
+form.reset()
+
+})
+
+const icones=document.querySelectorAll('.bi')
+
+icones.forEach(icone=>{
+
+icone.addEventListener('mouseenter',()=>{
+icone.style.color='#27ae60'
+icone.style.transition='.3s'
+})
+
+icone.addEventListener('mouseleave',()=>{
+icone.style.color='white'
+})
+
+})
+
+window.addEventListener('load',()=>{
+
+Swal.fire({
+title:'Bem-vindo à FloraGrid 🌸',
+text:'Descubra flores incríveis.',
+icon:'info',
+timer:2500,
+showConfirmButton:false
+})
+
+})
+
+</script>
+
 </body>
-
 </html>

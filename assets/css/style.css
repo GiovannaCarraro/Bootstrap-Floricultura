@@ -1,117 +1,44 @@
-:root {
-    --verde-pastel: #c8e6c9;
-    --rosa-pastel: #ffd6e8;
-    --roxo-pastel: #d9c2ff;
-    --branco: #fffdfd;
-    --texto: #5e5473;
+.menu-navegacao{
+    background: #fffaf5 !important;
+    border-bottom: 1px solid rgba(176, 137, 104, 0.2);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
 }
 
-body {
-    background-color: #fff9fc;
-    font-family: 'pangolin', 'cursive';
-    color: var(--texto);
-}
-
-/* menu */
-.menu-navegacao {
-    background: linear-gradient(90deg, var(--rosa-pastel), var(--roxo-pastel));
-}
-
-.navbar-brand {
-    color: #7a4fa3 !important;
-    font-size: 1.7rem;
-}
-
-;
-
-.nav-link {
-    color: #6b5b7a !important;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.nav-link:hover {
-    color: #ffffff !important;
-}
-
-/* hero */
-.seccao-destaque {
-    padding: 90px 0;
-    background: linear-gradient(135deg, #fff0f7, #f0e6ff, #e6fff0);
-}
-
-.seccao-destaque h1 {
-    color: #75508f;
-}
-
-.seccao-destaque p {
-    color: #7d728d;
-}
-
-.btn-success {
-    background-color: #caa8ff !important;
+.cartao-flor{
     border: none !important;
-    color: white !important;
-    border-radius: 30px;
-    padding: 12px 25px;
-    transition: 0.3s;
-    font-weight: bold;
-}
-
-.btn-success:hover {
-    background-color: #b68df8 !important;
-    transform: scale(1.05);
-}
-
-/* vitrine */
-.vitrine-flores {
-    padding: 70px 0;
-    background-color: #fdf7ff;
-}
-
-
-/* estilos */
-.seccao-destaque {
-    padding: 80px 0;
-    background-color: #fdfcfb;
-}
-
-.vitrine-flores {
-    padding: 60px 0;
-    background-color: #f8f9fa;
-}
-
-
-.cartao-flor {
-    transition: transform 0.3s;
-    border: none;
-    border-radius: 15px;
+    border-radius: 30px !important;
     overflow: hidden;
+    background: #ffffff;
+    transition: 0.4s;
+    box-shadow: var(--sombra);
 }
 
-.cartao-flor:hover {
-    transform: scale(1.03);
+.form-control{
+    border-radius: 18px;
+    border: 2px solid #e6d5c3;
+    padding: 14px;
+    background: #ffffff;
+    transition: 0.3s;
 }
 
-.cartao-flor__imagem {
-    height: 250px;
-    object-fit: cover;
+.seccao-destaque{
+    padding: 120px 0;
+    background:
+    radial-gradient(circle at top left, #f1e3d3 0%, transparent 30%),
+    radial-gradient(circle at bottom right, #e6d5c3 0%, transparent 30%),
+    #fffaf5;
 }
 
-.cartao-flor__titulo {
-    font-size: 1.4rem;
-    color: #2c3e50;
-    margin-top: 15px;
+.vitrine-flores{
+    padding: 100px 0;
+    background: #f8f1ea;
 }
 
-.cartao-flor__preco {
-    font-weight: bold;
-    color: #27ae60;
-    font-size: 1.2rem;
+.galeria{
+    background: #f5ebe0 !important;
 }
 
-.rodape-principal {
-    background-color: #2d3436;
-    color: white;
-    padding: 40px 0;
+#contato-formulario{
+    padding: 100px 0;
+    background: #fffaf5;
 }
