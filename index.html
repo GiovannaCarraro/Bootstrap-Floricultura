@@ -1,433 +1,271 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FloraGrid | Floricultura</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .hero {
-            padding: 80px 0;
-            background: #fdfcfb;
-        }
-        .cards {
-            padding: 60px 0;
-            background: #f8f9fa;
-        }
-        .card-flor {
-            transition: .3s;
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-        .card-flor:hover {
-            transform: scale(1.03);
-        }
-        .card-flor img {
-            height: 250px;
-            object-fit: cover;
-        }
-        .preco {
-            font-weight: bold;
-            color: #27ae60;
-            font-size: 1.2rem;
-        }
-        .galeria img {
-            height: 300px;
-            object-fit: cover;
-            width: 100%;
-        }
-        footer {
-            background: #2d3436;
-            color: #fff;
-            padding: 40px 0;
-        }
-        .bi {
-            font-size: 1.4rem;
-            cursor: pointer;
-        }
+        /* Teus estilos originais preservados */
+        .seccao-destaque { padding: 80px 0; background-color: #fdfcfb; }
+        .vitrine-flores { padding: 60px 0; background-color: #f8f9fa; }
+        
+        .cartao-flor { transition: transform 0.3s; border: none; border-radius: 15px; overflow: hidden; }
+        .cartao-flor:hover { transform: scale(1.03); }
+        .cartao-flor__imagem { height: 250px; object-fit: cover; }
+        .cartao-flor__titulo { font-size: 1.4rem; color: #2c3e50; margin-top: 15px; }
+        .cartao-flor__preco { font-weight: bold; color: #27ae60; font-size: 1.2rem; }
+        
+        /* Novos estilos BEM para os critérios adicionados */
+        .galeria-flores { padding: 60px 0; }
+        .galeria-flores__img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; transition: 0.3s; }
+        .galeria-flores__img:hover { opacity: 0.8; cursor: pointer; }
+        
+        .contato { padding: 60px 0; background-color: #f8f9fa; }
+        .contato__form { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+
+        .rodape-principal { background-color: #2d3436; color: white; padding: 40px 0; }
     </style>
-
 </head>
-
 <body>
-    <!-- NAVBAR -->
-    <header class="shadow-sm sticky-top bg-white">
+
+    <header class="menu-navegacao shadow-sm sticky-top bg-white">
         <nav class="navbar navbar-expand-lg navbar-light container">
-            <a class="navbar-brand fw-bold" href="#">
-                🌸 FloraGrid
-            </a>
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menu">
+            <a class="navbar-brand fw-bold" href="#">🌻 FloraGrid</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="menu">
+            <div class="collapse navbar-collapse" id="menuPrincipal">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#inicio">Início</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"
-                           href="#"
-                           data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Produtos
                         </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item" href="#vitrine">
-                                    Buquês
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#galeria">
-                                    Galeria
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#formulario">
-                                    Contato
-                                </a>
-                            </li>
+                        <ul class="dropdown-menu shadow border-0" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#vitrine">Buquês</a></li>
+                            <li><a class="dropdown-item" href="#galeria">Galeria</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#contato">Encomendas</a></li>
                         </ul>
-
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contato">Rodapé</a>
-                    </li>
-
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
                 </ul>
-
             </div>
-
         </nav>
-
     </header>
 
-    <!-- MAIN -->
     <main>
-
-        <!-- HERO -->
-        <section id="inicio" class="hero">
-
-            <div class="container">
-
+        <section id="inicio" class="seccao-destaque">
+            <div class="container"> 
                 <div class="row align-items-center">
-
                     <div class="col-md-6">
-
-                        <h1 class="display-4 fw-bold">
-                            Beleza que floresce em cada detalhe
-                        </h1>
-
-                        <p class="lead">
-                            Encontre os melhores arranjos para presentear.
-                        </p>
-
-                        <a href="#vitrine" class="btn btn-success btn-lg">
-                            Explorar Flores
-                        </a>
-
+                        <h1 class="display-4 fw-bold">Beleza que floresce em cada detalhe</h1>
+                        <p class="lead">Encontre os melhores arranjos para presentear ou decorar o seu espaço.</p>
+                        <a href="#vitrine" class="btn btn-success btn-lg px-4">Explorar Flores</a>
                     </div>
-
                     <div class="col-md-6">
-
-                        <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80"
-                             class="img-fluid rounded-4 shadow">
-
+                        <img src="assets/img/buque5.jpg" 
+                             alt="Arranjo de Flores" class="img-fluid rounded-4 shadow">
                     </div>
-
                 </div>
-
             </div>
-
         </section>
 
-        <!-- CARDS -->
-        <section id="vitrine" class="cards">
-
-            <div class="container">
-
-                <h2 class="text-center fw-bold mb-5">
-                    Nossa Coleção
-                </h2>
-
-                <div class="row g-4">
-
-                    <!-- CARD 1 -->
-                    <div class="col-md-4">
-
-                        <div class="card card-flor shadow-sm h-100">
-
-                            <img src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?auto=format&fit=crop&w=400&q=80">
-
+        <section id="vitrine" class="vitrine-flores">
+            <div class="container conteudo-vitrine">
+                <h2 class="text-center mb-5 fw-bold">Nossa Coleção</h2>
+                <div class="row g-4 listagem-produtos">
+                    <article class="col-12 col-md-6 col-lg-4">
+                        <div class="card cartao-flor h-100 shadow-sm">
+                            <img src="assets/img/buque2.png" class="card-img-top cartao-flor__imagem" alt="Rosa Vermelha">
                             <div class="card-body text-center">
-
-                                <h3>Rosa Imperial</h3>
-
-                                <p class="text-muted">
-                                    Elegância definitiva.
-                                </p>
-
-                                <p class="preco">R$ 290,90</p>
-
-                                <button class="btn btn-outline-success w-100">
-                                    Adicionar ao Carrinho
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <!-- CARD 2 -->
-                    <div class="col-md-4">
-                        <div class="card card-flor shadow-sm h-100">
-                            <img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=400&q=80">
-                            <div class="card-body text-center">
-                                <h3>Girassol do Campo</h3>
-                                <p class="text-muted">
-                                    Luz e alegria.
-                                </p>
-                                <p class="preco">R$ 150,00</p>
-                                <button class="btn btn-outline-success w-100">
-                                    Adicionar ao Carrinho
-                                </button>
+                                <h3 class="cartao-flor__titulo">Rosa Imperial</h3>
+                                <p class="text-muted">A elegância definitiva em forma de flor.</p>
+                                <p class="cartao-flor__preco">R$ 290,90</p>
+                                <button class="btn btn-outline-success w-100 fw-bold btn-carrinho">Adicionar ao Carrinho</button>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- CARD 3 -->
-                    <div class="col-md-4">
-
-                        <div class="card card-flor shadow-sm h-100">
-
-                            <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=400&q=80">
-
+                    </article>
+                    <article class="col-12 col-md-6 col-lg-4">
+                        <div class="card cartao-flor h-100 shadow-sm">
+                            <img src="assets/img/buque7.webp" class="card-img-top cartao-flor__imagem" alt="Girassol">
                             <div class="card-body text-center">
-
-                                <h3>Lírio Branco</h3>
-
-                                <p class="text-muted">
-                                    Pureza e sofisticação.
-                                </p>
-
-                                <p class="preco">R$ 320,50</p>
-
-                                <button class="btn btn-outline-success w-100">
-                                    Adicionar ao Carrinho
-                                </button>
-
+                                <h3 class="cartao-flor__titulo">Girassol do Campo</h3>
+                                <p class="text-muted">Luz e alegria para qualquer ambiente.</p>
+                                <p class="cartao-flor__preco">R$ 150,00</p>
+                                <button class="btn btn-outline-success w-100 fw-bold btn-carrinho">Adicionar ao Carrinho</button>
                             </div>
-
                         </div>
-
-                    </div>
-
+                    </article>
+                    <article class="col-12 col-md-6 col-lg-4">
+                        <div class="card cartao-flor h-100 shadow-sm">
+                            <img src="assets/img/buque8.jpg" class="card-img-top cartao-flor__imagem" alt="Lírios">
+                            <div class="card-body text-center">
+                                <h3 class="cartao-flor__titulo">Lírio Branco</h3>
+                                <p class="text-muted">Símbolo de pureza e sofisticação.</p>
+                                <p class="cartao-flor__preco">R$ 320,50</p>
+                                <button class="btn btn-outline-success w-100 fw-bold btn-carrinho">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-
             </div>
-
         </section>
 
-        <!-- GALERIA -->
-        <section id="galeria" class="py-5 bg-light">
-
+        <section id="galeria" class="galeria-flores">
             <div class="container">
-
-                <h2 class="text-center fw-bold mb-5">
-                    Galeria
-                </h2>
-
-                <div class="row g-4">
-
-                    <div class="col-md-4">
-                        <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80"
-                             class="rounded shadow">
+                <h2 class="text-center mb-5 fw-bold">Sugestões de Buquês FloraGrid</h2>
+                <div class="row g-3">
+                    <div class="col-6 col-md-3">
+                        <img src="assets/img/buque9.png" class="galeria-flores__img" alt="Galeria 1">
                     </div>
-
-                    <div class="col-md-4">
-                        <img src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?auto=format&fit=crop&w=600&q=80"
-                             class="rounded shadow">
+                    <div class="col-6 col-md-3">
+                        <img src="assets/img/buque3.webp" class="galeria-flores__img" alt="Galeria 2">
                     </div>
-
-                    <div class="col-md-4">
-                        <img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=600&q=80"
-                             class="rounded shadow">
+                    <div class="col-6 col-md-3">
+                        <img src="assets/img/buque10.jpg" class="galeria-flores__img" alt="Galeria 3">
                     </div>
-
+                    <div class="col-6 col-md-3">
+                        <img src="assets/img/buque2.png" class="galeria-flores__img" alt="Galeria 4">
+                    </div>
                 </div>
-
             </div>
-
         </section>
 
-        <!-- FORM -->
-        <section id="formulario" class="py-5">
-
+        <section id="contato" class="contato">
             <div class="container">
-
-                <h2 class="text-center fw-bold mb-5">
-                    Entre em Contato
-                </h2>
-
+                <h2 class="text-center mb-5 fw-bold">Peça o seu Orçamento</h2>
                 <div class="row justify-content-center">
-
-                    <div class="col-md-8">
-
-                        <form id="formContato">
-
+                    <div class="col-md-6">
+                        <form id="formContato" class="contato__form">
                             <div class="mb-3">
-                                <label class="form-label">Nome</label>
-                                <input type="text" class="form-control" required>
+                                <label for="nome" class="form-label">Nome Completo</label>
+                                <input type="text" class="form-control" id="nome" required>
                             </div>
-
                             <div class="mb-3">
-                                <label class="form-label">E-mail</label>
-                                <input type="email" class="form-control" required>
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="email" required>
                             </div>
-
                             <div class="mb-3">
-                                <label class="form-label">Mensagem</label>
-                                <textarea class="form-control" rows="5" required></textarea>
+                                <label for="mensagem" class="form-label">Mensagem</label>
+                                <textarea class="form-control" id="mensagem" rows="3" required></textarea>
                             </div>
-
-                            <button type="submit" class="btn btn-success w-100">
-                                Enviar Mensagem
-                            </button>
-
+                            <button type="submit" class="btn btn-success w-100 fw-bold">Enviar Mensagem</button>
                         </form>
-
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
     </main>
 
-    <!-- FOOTER -->
-    <footer id="contato">
-
+    <footer class="rodape-principal">
         <div class="container text-center">
-
             <h4 class="fw-bold">Floricultura FloraGrid</h4>
-
             <p>Cultivando sorrisos desde 2026.</p>
-
             <div class="py-3">
-                <i class="bi bi-instagram px-2"></i>
-                <i class="bi bi-facebook px-2"></i>
-                <i class="bi bi-whatsapp px-2"></i>
+                <i class="bi bi-instagram px-2" style="font-size: 1.5rem; cursor: pointer;"></i>
+                <i class="bi bi-facebook px-2" style="font-size: 1.5rem; cursor: pointer;"></i>
+                <i class="bi bi-whatsapp px-2" style="font-size: 1.5rem; cursor: pointer;"></i>
             </div>
-
-            <hr>
-
+            <hr class="opacity-25 text-white">
             <p class="small mb-0">© Todos os direitos reservados.</p>
-
         </div>
-
     </footer>
 
-    <!-- JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- JS -->
     <script>
-        const botoes = document.querySelectorAll('.btn-outline-success');
-        let carrinho = 0;
+        const botoes=document.querySelectorAll('.btn-outline-success')
+    let carrinho=0
 
-        const menu = document.querySelector('.navbar-nav');
-        const item = document.createElement('li');
+    const menu=document.querySelector('.navbar-nav')
+    const item=document.createElement('li')
 
-        item.classList.add('nav-item');
+    item.classList.add('nav-item')
 
-        item.innerHTML = `
-            <a class="nav-link fw-bold" href="#">
-                🛒 Carrinho (<span id="contador">0</span>)
-            </a>
-        `;
+    item.innerHTML=`
+    <a class="nav-link fw-bold" href="#">
+    🛒 Carrinho (<span id="contador">0</span>)
+    </a>
+    `
 
-        menu.appendChild(item);
+    menu.appendChild(item)
 
-        botoes.forEach(botao => {
+    botoes.forEach(botao=>{
 
-            botao.addEventListener('click', function () {
+    botao.addEventListener('click',function(){
 
-                const card = this.closest('.card');
+    const card=this.closest('.card')
 
-                const nome = card.querySelector('h3').textContent;
-                const preco = card.querySelector('.preco').textContent;
+    const nome=card.querySelector('h3').textContent
+    const preco=card.querySelector('.preco').textContent
 
-                carrinho++;
+    carrinho++
 
-                document.getElementById('contador').textContent = carrinho;
+    document.getElementById('contador').textContent=carrinho
 
-                Swal.fire({
-                    title: 'Produto adicionado 🌸',
-                    html: `<strong>${nome}</strong><br>${preco}`,
-                    icon: 'success',
-                    confirmButtonColor: '#27ae60'
-                });
+    Swal.fire({
+    title:'Produto adicionado 🌸',
+    html:`<strong>${nome}</strong><br>${preco}`,
+    icon:'success',
+    confirmButtonColor:'#27ae60'
+    })
 
-            });
+    })
 
-        });
+    })
 
-        const form = document.getElementById('formContato');
+    const form=document.getElementById('formContato')
 
-        form.addEventListener('submit', function (e) {
+    form.addEventListener('submit',function(e){
 
-            e.preventDefault();
+    e.preventDefault()
 
-            Swal.fire({
-                title: 'Mensagem enviada 🌷',
-                text: 'Entraremos em contato em breve.',
-                icon: 'success',
-                confirmButtonColor: '#27ae60'
-            });
+    Swal.fire({
+    title:'Mensagem enviada 🌷',
+    text:'Entraremos em contato em breve.',
+    icon:'success',
+    confirmButtonColor:'#27ae60'
+    })
 
-            form.reset();
+    form.reset()
 
-        });
+    })
 
-        const icones = document.querySelectorAll('.bi');
+    const icones=document.querySelectorAll('.bi')
 
-        icones.forEach(icone => {
+    icones.forEach(icone=>{
 
-            icone.addEventListener('mouseenter', () => {
-                icone.style.color = '#27ae60';
-                icone.style.transition = '.3s';
-            });
+    icone.addEventListener('mouseenter',()=>{
+    icone.style.color='#27ae60'
+    icone.style.transition='.3s'
+    })
 
-            icone.addEventListener('mouseleave', () => {
-                icone.style.color = 'white';
-            });
+    icone.addEventListener('mouseleave',()=>{
+    icone.style.color='white'
+    })
 
-        });
+    })
 
-        window.addEventListener('load', () => {
+    window.addEventListener('load',()=>{
 
-            Swal.fire({
-                title: 'Bem-vindo à FloraGrid 🌸',
-                text: 'Descubra flores incríveis.',
-                icon: 'info',
-                timer: 2500,
-                showConfirmButton: false
-            });
+    Swal.fire({
+    title:'Bem-vindo à FloraGrid 🌸',
+    text:'Descubra flores incríveis.',
+    icon:'info',
+    timer:2500,
+    showConfirmButton:false
+    })
 
-        });
+    })
+
+</script>
     </script>
-
 </body>
 </html>
