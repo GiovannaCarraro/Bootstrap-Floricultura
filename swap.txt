@@ -1,0 +1,36 @@
+Ana Luiza
+Estrutura HTML
+
+Responsável por:
+• Estrutura semântica
+• Containers
+• Grid
+• Organização das seções
+
+
+Giovanna/Gabrielli
+Bootstrap e Responsividade
+
+Responsável por:
+• Classes Bootstrap
+• Componentes
+• Responsividade
+• Layout
+
+Giovanna/Gabrielli
+JavaScript
+
+Responsável por:
+• Eventos
+• SweetAlert2
+• Interações
+• Funcionalidades
+
+Nathalya
+Organização Visual
+
+Responsável por:
+• Organização BEM
+• Padronização
+• Revisão
+• Ajustes finais
