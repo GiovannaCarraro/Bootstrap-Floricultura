@@ -1,12 +1,12 @@
 :root {
-     --verde-pastel: #c8e6c9;
-        --rosa-pastel: #ffd6e8;
-        --roxo-pastel: #d9c2ff;
-        --branco: #fffdfd;
-        --texto: #5e5473;
+    --verde-pastel: #c8e6c9;
+    --rosa-pastel: #ffd6e8;
+    --roxo-pastel: #d9c2ff;
+    --branco: #fffdfd;
+    --texto: #5e5473;
 }
 
-body{
+body {
     background-color: #fff9fc;
-     font-family: ;
+    font-family: ;
 }
