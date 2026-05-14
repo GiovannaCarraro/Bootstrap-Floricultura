@@ -34,3 +34,10 @@ Responsável por:
 • Padronização
 • Revisão
 • Ajustes finais
+
+
+tarefas:
+fazendo a logo e linkando no html
+
+
+https://github.com/GiovannaCarraro/Bootstrap-Floricultura.git

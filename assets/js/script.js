@@ -1,204 +1,115 @@
-// ===============================
-// FLORICULTURA ENCANTADA
-// SCRIPT PRINCIPAL
-// ===============================
+   const buttons = document.querySelectorAll('.product-card__button');
+
+    
+    // let cartCount = 0;
+
+    
+    // const nav = document.querySelector('.navbar-nav');
+
+    // const cartItem = document.createElement('li');
+    // cartItem.classList.add('nav-item');
+
+    // cartItem.innerHTML = `
+    //     <a class="nav-link fw-bold" href="#">
+    //         <i class="bi bi-cart3"></i>
+    //         Carrinho (<span id="cart-count">0</span>)
+    //     </a>
+    // `;
+
+    nav.appendChild(cartItem);
 
 
-// -------------------------------
-// ALERTA HERO SECTION
-// -------------------------------
+    buttons.forEach(button => {
 
-function saudar() {
+        button.addEventListener('click', function () {
 
-    Swal.fire({
-        title: 'Bem-vindo!',
-        text: 'Prepare-se para conhecer os melhores arranjos florais.',
-        icon: 'success',
-        confirmButtonColor: '#198754',
-        confirmButtonText: 'Ver flores 🌸'
+            // Captura informações do produto
+            const card = this.closest('.card');
+
+            const productName =
+                card.querySelector('.product-card__title').textContent;
+
+            const productPrice =
+                card.querySelector('.product-card__price').textContent;
+
+            // Atualiza carrinho
+            cartCount++;
+
+            document.getElementById('cart-count').textContent = cartCount;
+
+            // SweetAlert2
+            Swal.fire({
+                title: 'Produto adicionado!',
+                html: `
+                    <strong>${productName}</strong><br>
+                    Preço: ${productPrice}
+                `,
+                icon: 'success',
+                confirmButtonColor: '#198754',
+                confirmButtonText: 'Continuar comprando'
+            });
+
+        });
+
     });
 
-}
+    // =========================
+    // Hover nos ícones sociais
+    // =========================
+    const socialIcons = document.querySelectorAll('.footer__social-icon');
 
+    socialIcons.forEach(icon => {
 
+        icon.addEventListener('mouseenter', () => {
+            icon.style.color = '#198754';
+        });
 
-// -------------------------------
-// CARRINHO
-// -------------------------------
+        icon.addEventListener('mouseleave', () => {
+            icon.style.color = 'white';
+        });
 
-let contadorCarrinho = 0;
+    });
 
-const botoesCompra = document.querySelectorAll('.comprar-btn');
+    // =========================
+    // Scroll suave do menu
+    // =========================
+    const navLinks = document.querySelectorAll('.nav-link');
 
-botoesCompra.forEach(botao => {
+    navLinks.forEach(link => {
 
-    botao.addEventListener('click', () => {
+        link.addEventListener('click', function (e) {
 
-        contadorCarrinho++;
+            const targetId = this.getAttribute('href');
 
-        document.getElementById('contador')
-        .innerText = contadorCarrinho;
+            // Verifica se é âncora
+            if (targetId.startsWith('#')) {
+
+                e.preventDefault();
+
+                const section = document.querySelector(targetId);
+
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+            }
+
+        });
+
+    });
+
+    // =========================
+    // Mensagem ao carregar página
+    // =========================
+    window.addEventListener('load', () => {
 
         Swal.fire({
-            title: 'Produto adicionado!',
-            text: 'O item foi adicionado ao carrinho.',
-            icon: 'success',
-            timer: 1500,
+            title: 'Bem-vindo à FloraGrid 🌸',
+            text: 'Explore nossas flores especiais!',
+            icon: 'info',
+            timer: 2500,
             showConfirmButton: false
         });
 
     });
-
-});
-
-
-
-// -------------------------------
-// FORMULÁRIO
-// -------------------------------
-
-const formulario = document.getElementById('formulario');
-
-if(formulario){
-
-    formulario.addEventListener('submit', function(e){
-
-        e.preventDefault();
-
-        Swal.fire({
-            title: 'Mensagem enviada!',
-            text: 'Responderemos em breve 🌷',
-            icon: 'success',
-            confirmButtonColor: '#198754'
-        });
-
-        formulario.reset();
-
-    });
-
-}
-
-
-
-// -------------------------------
-// ANIMAÇÃO NOS CARDS
-// -------------------------------
-
-const cards = document.querySelectorAll('.card');
-
-cards.forEach(card => {
-
-    card.addEventListener('mouseenter', () => {
-
-        card.style.transform = 'translateY(-10px)';
-        card.style.transition = '0.3s';
-
-    });
-
-    card.addEventListener('mouseleave', () => {
-
-        card.style.transform = 'translateY(0)';
-
-    });
-
-});
-
-
-
-// -------------------------------
-// BOTÃO VOLTAR AO TOPO
-// -------------------------------
-
-const botaoTopo = document.getElementById('btnTopo');
-
-if(botaoTopo){
-
-    window.addEventListener('scroll', () => {
-
-        if(window.scrollY > 300){
-
-            botaoTopo.style.display = 'block';
-
-        } else {
-
-            botaoTopo.style.display = 'none';
-
-        }
-
-    });
-
-
-    botaoTopo.addEventListener('click', () => {
-
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-
-    });
-
-}
-
-
-
-// -------------------------------
-// NAVBAR MUDA AO ROLAR
-// -------------------------------
-
-const header = document.querySelector('.header');
-
-window.addEventListener('scroll', () => {
-
-    if(window.scrollY > 50){
-
-        header.classList.add('shadow');
-
-    } else {
-
-        header.classList.remove('shadow');
-
-    }
-
-});
-
-
-
-// -------------------------------
-// SCROLL SUAVE LINKS MENU
-// -------------------------------
-
-const links = document.querySelectorAll('.nav-link');
-
-links.forEach(link => {
-
-    link.addEventListener('click', function(e){
-
-        const destino = document.querySelector(this.getAttribute('href'));
-
-        if(destino){
-
-            e.preventDefault();
-
-            destino.scrollIntoView({
-                behavior: 'smooth'
-            });
-
-        }
-
-    });
-
-});
-
-
-
-// -------------------------------
-// MENSAGEM AO CARREGAR A PÁGINA
-// -------------------------------
-
-window.addEventListener('load', () => {
-
-    console.log('Floricultura Encantada carregada com sucesso 🌸');
-
-});
-
 
